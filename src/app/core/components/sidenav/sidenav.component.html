@@ -1,0 +1,93 @@
+<div
+  class="sidenav"
+  [ngClass]="{
+    'sidenav-collapsed': isCollapsed(),
+    'hide-sidenav': isSmallScreen(),
+    'dark-background': isDarkTheme,
+    'light-background': !isDarkTheme,
+  }"
+>
+  <div class="menu-items">
+    <mat-list>
+      @for (item of filteredMenuItems; track item; let i = $index) {
+        @if (!item.children) {
+          <a
+            mat-list-item
+            [routerLink]="item.route"
+            routerLinkActive="active-link"
+            class="menu-content"
+          >
+            <div class="menu-item">
+              <span class="menu-text">{{ item.label }}</span>
+            </div>
+          </a>
+        }
+        <mat-accordion>
+          @if (item.children) {
+            <mat-expansion-panel
+              class="expansion-panel"
+              [class.mat-elevation-z0]="true"
+              dense
+              [expanded]="step === i"
+              (opened)="setStep(i)"
+            >
+              <mat-expansion-panel-header>
+                <span class="menu-text" class="menu-content">{{
+                  item.label
+                }}</span>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                @for (child of item.children; track child; let j = $index) {
+                  <ng-container class="child">
+                    @if (!child.sub_children) {
+                      <a
+                        mat-list-item
+                        [routerLink]="child.route"
+                        routerLinkActive="active-link"
+                        class="menu-content child-content"
+                      >
+                        <div class="menu-item">
+                          <h1 class="menu-text">{{ child.label }}</h1>
+                        </div>
+                      </a>
+                    }
+                    @if (child.sub_children) {
+                      <mat-expansion-panel
+                        class="expansion-panel"
+                        [class.mat-elevation-z0]="true"
+                        dense
+                        [expanded]="step === j"
+                        (opened)="setStep(j)"
+                      >
+                        <mat-expansion-panel-header>
+                          <span class="menu-text">{{ child.label }}</span>
+                        </mat-expansion-panel-header>
+                        <mat-nav-list>
+                          @for (
+                            sub_child of child.sub_children;
+                            track sub_child
+                          ) {
+                            <a
+                              mat-list-item
+                              [routerLink]="sub_child.route"
+                              routerLinkActive="active-link"
+                              class="menu-content"
+                            >
+                              <div class="menu-item">
+                                <h1 class="menu-text">{{ sub_child.label }}</h1>
+                              </div>
+                            </a>
+                          }
+                        </mat-nav-list>
+                      </mat-expansion-panel>
+                    }
+                  </ng-container>
+                }
+              </mat-nav-list>
+            </mat-expansion-panel>
+          }
+        </mat-accordion>
+      }
+    </mat-list>
+  </div>
+</div>

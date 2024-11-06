@@ -1,0 +1,138 @@
+@mixin btns {
+    :host {
+        .fill-btn {
+            background-color: #4456ff;
+            color: #fff;
+            box-shadow: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 2.5rem;
+            margin-top: 10px;
+
+            @media (min-width: 768px) {
+                width: 45%;
+            }
+        }
+
+        .transparent-btn {
+            background-color: transparent;
+            color: #4456ff;
+            border: 2px solid #4456ff;
+            box-shadow: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 2.5rem;
+            margin-top: 10px;
+
+            @media (min-width: 768px) {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@mixin forms {
+    :host {
+        .input-form {
+            .input-field {
+                width: 100%;
+                padding-top: 0.5rem;
+            }
+
+            .field-label {
+                font-weight: 500;
+                font-size: 0.8rem;
+            }
+
+            ::ng-deep.mdc-text-field--outlined {
+                --mdc-outlined-text-field-outline-width: 0 !important;
+                background-color: var(--container-color-8);
+                border-radius: 5px;
+                height: 4rem;
+                align-items: center;
+            }
+
+            ::ng-deep.mat-date-range-input {
+                height: 3rem;
+                display: flex;
+            }
+
+            ::ng-deep.mat-date-range-input-container {
+                width: 100%;
+                justify-content: center;
+                padding-left: 0.6rem;
+            }
+
+            .select {
+                margin-top: 0.5rem;
+                width: 100%;
+            }
+
+            ::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+                display: none;
+            }
+
+            ::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+                display: none;
+            }
+
+            ::ng-deep.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+                padding: 0;
+            }
+
+            ::ng-deep.mat-mdc-form-field-infix {
+                min-height: 0;
+            }
+        }
+    }
+}
+
+@mixin tables {
+    :host {
+        .table-section {
+
+            ::ng-deep.mat-mdc-header-cell,
+            .mat-mdc-cell {
+                border: none;
+            }
+
+            ::ng-deep.mat-mdc-table,
+            ::ng-deep.mat-mdc-paginator {
+                background-color: transparent;
+            }
+
+            ::ng-deep.mat-mdc-text-field-wrapper {
+                height: 2.1rem;
+                display: flex;
+                align-items: center;
+            }
+
+            th {
+                font-weight: bold;
+            }
+        }
+
+        .no-data {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+            color: #605e5e;
+
+            .box-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .icon {
+                    transform: scale(1.5);
+                }
+
+                p {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

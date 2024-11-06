@@ -1,0 +1,65 @@
+.grid-container {
+
+    .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #004c97 0%, #2ecc71), no-repeat right -120px top;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        .logout-title {
+            font-size: 1.2pc;
+            color: #FFFFFF;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .logout-subtitle {
+            font-size: 1pc;
+            color: #FFFFFF;
+            text-align: left;
+            font-weight: 300;
+        }
+
+        .input-container {
+            padding-left: 20%;
+            padding-right: 20%;
+            line-height: 2.5;
+        }
+
+        .logout-items {
+            width: 20rem;
+
+            .logout-field {
+                width: 100%;
+
+                .password-icon {
+                    cursor: pointer;
+                }
+            }
+
+            .login-button {
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                width: 100%;
+                height: 60px;
+                border-radius: 10px;
+                background-color: #ffffff;
+                color: #004c97;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .right-grid {
+        grid-row: 1;
+        grid-column: 1;
+    }
+}

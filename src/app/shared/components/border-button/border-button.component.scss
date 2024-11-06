@@ -1,0 +1,34 @@
+.main-container {
+    .action-btn {
+        font-size: 0.7rem;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 5px;
+
+        .icon {
+            font-weight: 500;
+        }
+    }
+
+    .yellow-btn {
+        background-color: #FFAA06;
+    }
+
+    .red-btn {
+        background-color: transparent;
+        border: 2px solid #F0424C;
+        color: var(--text-color-0);
+    }
+
+    .blue-btn {
+        background-color: transparent;
+        border: 2px solid #0033A1;
+        color: var(--text-color-0);
+    }
+
+    .green-btn {
+        background-color: transparent;
+        border: 2px solid #4CAF50;
+        color: var(--text-color-0);
+    }
+}

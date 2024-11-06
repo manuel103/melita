@@ -1,0 +1,16 @@
+.main-container {
+    .action-btn {
+        font-size: 0.7rem;
+        font-weight: bold;
+
+        .icon {
+            font-weight: 500;
+        }
+    }
+
+    .action-btn {
+        color: var(--text-color-1);
+        background-color: var(--container-color-7);
+        border-radius: 5px;
+    }
+}

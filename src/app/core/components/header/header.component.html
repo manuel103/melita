@@ -1,0 +1,67 @@
+<mat-toolbar>
+  <nav class="toolbar-nav">
+    <div class="toolbar-row toolbar-hide-xs">
+      <div class="toolbar-left">
+        <div class="menu-button-container">
+          <button mat-icon-button class="icon-container toolbar-hide-md" (click)="sidenav.toggle()">
+            <mat-icon class="menu-button">menu</mat-icon>
+          </button>
+        </div>
+        <div></div>
+        <div></div>
+        <div class="logo-items-container">
+          <div class="logo-items">
+            <img routerLink="/app/dashboard" class="shield" src="/assets/icons/favicon.png" alt="Logo" />
+            <img routerLink="/app/dashboard" class="logo_white" src="{{ logoSrc }}" alt="Logo" />
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="button-menu-item">
+          <button class="theme-switch" type="button" aria-label="Toggle theme" mat-icon-button (click)="toggleTheme()"
+            matTooltip="Toggle theme">
+            <mat-icon>
+              {{ theme() === "light" ? "light_mode" : "dark_mode" }}
+            </mat-icon>
+          </button>
+        </div>
+        <div class="avatar-container" [matMenuTriggerFor]="menu" #trigger="matMenuTrigger">
+          <div class="avatar-icons-container">
+            <span class="username">{{ userName }}</span> &nbsp;
+            @if (!trigger.menuOpen) {
+            <mat-icon class="chevron_down">chevron_right</mat-icon>
+            }
+            @if (trigger.menuOpen) {
+            <mat-icon class="chevron_up">chevron_right</mat-icon>
+            }
+          </div>
+          <div class="sub-menu">
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="logout()">Log Out</button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar-row toolbar-show-xs">
+      <div class="menu-button-container toolbar-hide-md">
+        <button mat-icon-button class="icon-container" (click)="sidenav.toggle()">
+          <mat-icon class="menu-button">menu</mat-icon>
+        </button>
+      </div>
+      <div class="mobile-logo-items-container">
+        <div class="logo-items">
+          <img routerLink="/dashboard" class="logo_white" src="{{ logoSrc }}" alt="Logo" />
+        </div>
+      </div>
+      <div class="button-menu-item">
+        <button class="theme-switch" type="button" aria-label="Toggle theme" mat-icon-button (click)="toggleTheme()"
+          matTooltip="Toggle theme">
+          <mat-icon>
+            {{ theme() === "light" ? "light_mode" : "dark_mode" }}
+          </mat-icon>
+        </button>
+      </div>
+    </div>
+  </nav>
+</mat-toolbar>

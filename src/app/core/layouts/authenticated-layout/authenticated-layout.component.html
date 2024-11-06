@@ -1,0 +1,16 @@
+<div class="layout-container">
+    <app-header [sidenav]="sidenav"></app-header>
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav [opened]="screenWidth > 840" [mode]="screenWidth > 840 ? 'side' : 'over'"
+            [class.collapsed]="isCollapsed">
+            <app-sidenav></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content [class.collapsed]="isCollapsed">
+            <div class="main_content">
+                <div>
+                    <app-body [screenWidth]="screenWidth"></app-body>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

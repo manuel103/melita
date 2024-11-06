@@ -1,0 +1,87 @@
+@import "src/styles/shared";
+@include btns;
+@include forms;
+
+.main {
+    background: linear-gradient(to right, #004c97, #2ecc71); // Match the background gradient
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .parent-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            background: transparent;
+            padding: 2rem;
+            box-shadow: none;
+
+            mat-icon {
+                cursor: pointer;
+            }
+
+            .title {
+                font-size: 3rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 2rem;
+                font-family: sans-serif;
+            }
+
+            ::ng-deep.mdc-checkbox__native-control:checked~.mdc-checkbox__background .mdc-checkbox__checkmark {
+                color: #808080 !important;
+            }
+
+            .remember-forgot-container {
+                ::ng-deep.mat-internal-form-field>label {
+                    color: #ffffff;
+                }
+
+                ::ng-deep.mdc-checkbox__background {
+                    border: 2px solid #ffffff;
+                }
+
+                ::ng-deep.mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,
+                .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background {
+                    background-color: #ffffff;
+                }
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: 0.5rem 0 2rem;
+
+                a {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+            }
+
+            .fill-btn {
+                background-color: transparent;
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+
+            .disabled-btn {
+                cursor: not-allowed;
+            }
+        }
+    }
+}

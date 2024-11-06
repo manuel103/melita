@@ -1,0 +1,192 @@
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: var(--container-color-2);
+    box-shadow: none;
+
+    .toolbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .toolbar-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .right-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 14rem;
+            }
+
+            &.toolbar-hide-xs {
+                @media (max-width: 599px) {
+                    display: none;
+                }
+            }
+
+            &.toolbar-show-xs {
+                display: none;
+
+                @media (max-width: 599px) {
+                    display: flex;
+                }
+            }
+
+            &.toolbar-hide-md {
+                @media (min-width: 960px) {
+                    display: none;
+                }
+            }
+
+            .toolbar-left {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .menu-item {
+                width: 100%;
+
+                .title {
+                    margin: 0;
+                    font-size: 16px;
+                    color: var(--text-color-0);
+                }
+            }
+
+            .button-menu-item {
+                cursor: pointer;
+            }
+
+            .avatar-container {
+                .username {
+                    font-size: 1rem;
+                }
+
+                .chevron_down {
+                    transform: rotate(90deg);
+                }
+
+                .chevron_up {
+                    transform: rotate(-90deg);
+                }
+
+                .avatar {
+                    font-size: 48px;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 50%;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .avatar-icons-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+
+                    .chevron {
+                        font-weight: 500;
+                        transform: scale(0.7);
+                    }
+                }
+            }
+
+            .active {
+                background-color: #ffffff;
+                color: #0033A1 !important;
+                height: 100%;
+            }
+
+            .logo-items-container {
+                border-right: 1px solid;
+                width: 82%;
+
+                .logo-items {
+                    display: flex;
+                    align-items: flex-end;
+                    padding-right: 1.8em;
+
+                    .shield {
+                        width: 3rem;
+                        cursor: pointer;
+                    }
+
+                    .logo_white {
+                        width: 8rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .mobile-logo-items-container {
+                .logo-items {
+                    display: flex;
+                    align-items: flex-end;
+
+                    .shield {
+                        width: 3rem;
+                        cursor: pointer;
+                    }
+
+                    .logo_white {
+                        width: 8rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .logo-center {
+            width: 9rem;
+        }
+
+        .login-button-container {
+            padding-right: 5%;
+
+            button {
+                text-transform: capitalize;
+                padding-top: 21%;
+                padding-bottom: 21%;
+                background: #0089FF;
+            }
+        }
+
+        .menu-button-container {
+            display: flex;
+            flex: 0 !important;
+
+            .menu-button {
+                color: var(--text-color-0);
+            }
+        }
+
+        .icon-container,
+        .logo-container {
+            height: 100%;
+            background: transparent;
+        }
+
+        .login-text {
+            margin: 0;
+            color: #ffffff;
+            background-color: #0089FF;
+            padding: 30%;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+
+        .toolbar-hide-md {
+            @media (min-width: 960px) {
+                display: none !important;
+            }
+        }
+    }
+}

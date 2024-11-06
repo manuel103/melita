@@ -1,0 +1,26 @@
+.main-container {
+  .action-btn {
+    background-color: #0033a1;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+
+    .icon {
+      font-weight: 500;
+    }
+  }
+
+  .action-btn:disabled {
+    background-color: #dfdee2;
+    color: #949498;
+  }
+
+  .yellow-btn {
+    background-color: #ffaa06;
+  }
+
+  .red-btn {
+    background-color: #f0424c;
+  }
+}

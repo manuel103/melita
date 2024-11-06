@@ -1,0 +1,19 @@
+.body {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    top: 4rem;
+    margin-bottom: 4rem;
+    transition: all .5s ease;
+    padding: 0.8rem;
+}
+
+.body-trimmed {
+    overflow-y: hidden;
+}
+
+.full-body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}

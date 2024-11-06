@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="parent-container">
+        <div class="form-container">
+            <h1 class="title">melita</h1>
+            <form class="input-form" [formGroup]="loginForm">
+                <mat-form-field appearance="outline" class="input-field">
+                    <input matInput type="text" placeholder="Username" formControlName="username">
+                    <mat-error class="error-msg" *ngIf="loginForm?.get('username')?.hasError('required')">
+                        Username is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="input-field">
+                    <input matInput [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password"
+                        formControlName="password">
+                    <mat-icon (click)="togglePasswordVisibility()" matSuffix>{{ isPasswordVisible ? 'visibility_off' :
+                        'visibility' }}</mat-icon>
+                    <mat-error class="error-msg" *ngIf="loginForm?.get('password')?.hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="remember-forgot-container">
+                    <mat-checkbox formControlName="rememberMe">Remember me?</mat-checkbox>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button mat-flat-button class="fill-btn" (click)="login()" [disabled]="loginForm.invalid"
+                    [ngClass]="loginForm.invalid ? 'disabled-btn' : ''">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

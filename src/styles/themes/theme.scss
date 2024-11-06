@@ -1,0 +1,54 @@
+@use "@angular/material" as mat;
+// @use "src/app/core/layouts/layout.component.theme" as layout-theme;
+
+@include mat.core();
+
+$light-theme: mat.define-theme((color: (use-system-variables: true),
+            typography: (use-system-variables: true)));
+
+:root {
+    @include mat.all-component-themes($light-theme);
+    // @include layout-theme.theme($light-theme);
+
+    @include mat.system-level-colors($light-theme);
+    @include mat.system-level-typography($light-theme);
+
+    --custom-bg-color: conic-gradient(from 204.6deg at 69.15% 10.48%, #00319A 117deg, #99509F 290deg, #1F58D5 360deg);
+    --text-color-0: #000000;
+    --text-color-1: #0033A1;
+    --text-color-2: #ffffff;
+    --text-color-3: #ffffff;
+    --text-color-4: #0033A1;
+    --text-color-5: #000000;
+    --container-color-0: #0033A1;
+    --container-color-1: #ECF1FD;
+    --container-color-2: #ffffff;
+    --container-color-3: #EFEFEF;
+    --container-color-4: #ffffff;
+    --container-color-5: #EAEAEA;
+    --container-color-6: #ffffff;
+    --container-color-7: #0033A11A;
+    --container-color-8: #F5F5F5;
+    --container-color-9: #ffffff;
+    --skeleton-loader-bg-color: #ECF1FD;
+}
+
+.dark {
+    --text-color-0: #ffffff;
+    --text-color-1: #ffffff;
+    --text-color-2: #262F38;
+    --text-color-3: #ffffff;
+    --text-color-4: #262F38;
+    --text-color-5: #262F38;
+    --container-color-0: #262F38;
+    --container-color-1: #1A1A1A;
+    --container-color-2: #262F38;
+    --container-color-3: #1A1A1A;
+    --container-color-4: #1A1A1A;
+    --container-color-5: #262F38;
+    --container-color-6: #0033A1;
+    --container-color-7: #d2dbef1a;
+    --container-color-8: #d2dbef1a;
+    --container-color-9: #d2dbef1a;
+    --skeleton-loader-bg-color: #1C232B;
+}
